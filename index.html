@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gheorghe Briana-Maria | CV & Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+          content="Online CV and portfolio of Gheorghe Briana-Maria, Master's student in Databases and Software Technologies." />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-alt: #020617;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.12);
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --card: rgba(15, 23, 42, 0.9);
+            --border: rgba(148, 163, 184, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 16px 48px;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 700;
+            color: #0b1120;
+            box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.9),
+                        0 18px 35px rgba(15, 23, 42, 0.9);
+        }
+
+        .headline {
+            flex: 1 1 260px;
+        }
+
+        .name {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .subtitle {
+            margin-top: 4px;
+            font-size: 0.96rem;
+            color: var(--muted);
+        }
+
+        .tags {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(15, 23, 42, 0.7);
+            color: var(--muted);
+        }
+
+        .contact {
+            font-size: 0.85rem;
+            min-width: 230px;
+            border-radius: 16px;
+            padding: 10px 14px;
+            background: radial-gradient(circle at top left, var(--accent-soft), rgba(15, 23, 42, 0.95));
+            border: 1px solid var(--border);
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+            color: var(--muted);
+        }
+
+        .contact-row strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 800px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 18px 18px 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            margin-bottom: 18px;
+        }
+
+        section h2 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .pill {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        .about {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
+        .item {
+            margin-bottom: 12px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 0.88rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+        }
+
+        .item-meta {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .item-sub {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .item-bullets {
+            margin-top: 6px;
+            padding-left: 18px;
+            font-size: 0.84rem;
+            color: var(--muted);
+        }
+
+        .item-bullets li {
+            margin-bottom: 3px;
+        }
+
+        .chips {
+            margin-top: 4px;
+        }
+
+        footer {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="avatar">GB</div>
+        <div class="headline">
+            <div class="name">Gheorghe Briana-Maria</div>
+            <div class="subtitle">
+                Master's student in Databases and Software Technologies · University of Bucharest
+            </div>
+            <div class="tags">
+                <span class="tag">Java &amp; Spring Boot</span>
+                <span class="tag">Android / Kotlin</span>
+                <span class="tag">SQL · MySQL · Oracle</span>
+                <span class="tag">Web · HTML · CSS</span>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="contact-row">
+                <strong>Location:</strong> Bucharest, Romania
+            </div>
+            <div class="contact-row">
+                <strong>Phone:</strong> +40&nbsp;723&nbsp;864&nbsp;754
+            </div>
+            <div class="contact-row">
+                <strong>Email:</strong>
+                <a href="mailto:gheorghebrianamaria@gmail.com">gheorghebrianamaria@gmail.com</a>
+            </div>
+            <div class="contact-row">
+                <strong>GitHub:</strong>
+                <a href="https://github.com/GheorgheBriana" target="_blank" rel="noopener">
+                    github.com/GheorgheBriana
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Col stânga -->
+        <div>
+            <section>
+                <h2>About Me</h2>
+                <p class="about">
+                    I am currently pursuing a Master's degree in Databases and Software Technologies at
+                    the University of Bucharest and have gained practical experience through projects in
+                    Java, Spring Boot, SQL, and web technologies. I enjoy building software, learning new
+                    tools, and working in collaborative teams where I can contribute with practical ideas
+                    and solutions. I am seeking an entry-level role where I can apply my technical skills
+                    and grow through real-world projects.
+                </p>
+            </section>
+
+            <section>
+                <h2>Projects</h2>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Book Management System · Java Spring Boot</div>
+                        <div class="item-meta">Jun 2025</div>
+                    </div>
+                    <div class="item-sub">
+                        Web application with CRUD, validation, pagination, security, and testing.
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Built a Spring Boot application for managing books and authors.</li>
+                        <li>Implemented validation, pagination, and role-based access control.</li>
+                        <li>Migrated to a microservices architecture using Spring Cloud, JWT, and Resilience4j.</li>
+                    </ul>
+                    <div class="chips">
+                        <span class="pill">Java</span>
+                        <span class="pill">Spring Boot</span>
+                        <span class="pill">Spring Cloud</span>
+                        <span class="pill">JWT</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Concert Management · Oracle DB + PL/SQL</div>
+                        <div class="item-meta">Dec 2024</div>
+                    </div>
+                    <div class="item-sub">
+                        Database for managing concerts, tickets, and artists with advanced SQL logic.
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Designed and implemented an Oracle 19c database schema.</li>
+                        <li>Developed PL/SQL procedures, triggers, and packages for business logic.</li>
+                        <li>Wrote complex SQL queries for reporting and analysis.</li>
+                    </ul>
+                    <div class="chips">
+                        <span class="pill">Oracle 19c</span>
+                        <span class="pill">PL/SQL</span>
+                        <span class="pill">Database Design</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Mobile Banking Application · Java + SQLite</div>
+                        <div class="item-meta">Jun 2024</div>
+                    </div>
+                    <div class="item-sub">
+                        Personal finance management mobile application built in Java &amp; Android Studio.
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Implemented expense tracking and savings features with SQLite integration.</li>
+                        <li>Designed intuitive screens for adding, editing, and viewing transactions.</li>
+                        <li>Focused on clean code and separation of concerns.</li>
+                    </ul>
+                    <div class="chips">
+                        <span class="pill">Java</span>
+                        <span class="pill">Android Studio</span>
+                        <span class="pill">SQLite</span>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.8rem; color: #6b7280; margin-top: 6px;">
+                    More projects on GitHub:
+                    <a href="https://github.com/GheorgheBriana" target="_blank" rel="noopener">
+                        github.com/GheorgheBriana
+                    </a>
+                </p>
+            </section>
+
+            <section>
+                <h2>Professional Experience</h2>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Android Developer – Practical Training</div>
+                        <div class="item-meta">Apr 2023 – May 2023 · Bucharest</div>
+                    </div>
+                    <div class="item-sub">
+                        Interactive Systems · Android development with Kotlin and Android Studio.
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Worked on building mobile interfaces using Kotlin.</li>
+                        <li>Collaborated within a small team, improving communication and adaptability.</li>
+                        <li>Gained experience with the Android development lifecycle and tools.</li>
+                    </ul>
+                    <div class="chips">
+                        <span class="pill">Kotlin</span>
+                        <span class="pill">Android Studio</span>
+                        <span class="pill">Teamwork</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Col dreapta -->
+        <div>
+            <section>
+                <h2>Technical Skills</h2>
+                <div class="item">
+                    <div class="item-title">Backend &amp; Languages</div>
+                    <div class="item-sub">
+                        Java, C++, PL/SQL
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Frameworks &amp; Tools</div>
+                    <div class="item-sub">
+                        Spring Boot, Android (Kotlin), Git
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Databases</div>
+                    <div class="item-sub">
+                        SQL, MySQL, Oracle, PL/SQL
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Web</div>
+                    <div class="item-sub">
+                        HTML, CSS, basic JavaScript
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">
+                            Master's Degree – Databases and Software Technologies
+                        </div>
+                        <div class="item-meta">Oct 2024 – Present</div>
+                    </div>
+                    <div class="item-sub">
+                        University of Bucharest, Faculty of Mathematics and Computer Science
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Relevant courses: Spring Boot, Databases (SQL, PL/SQL), Android App Development.</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Erasmus Program – Business Administration</div>
+                        <div class="item-meta">Sep 2023 – Feb 2024</div>
+                    </div>
+                    <div class="item-sub">
+                        ISAG – European Business School, Porto, Portugal
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Bachelor’s Degree – Economic Cybernetics</div>
+                        <div class="item-meta">Oct 2021 – Jul 2024</div>
+                    </div>
+                    <div class="item-sub">
+                        University of Bucharest, Faculty of Business and Administration
+                    </div>
+                    <ul class="item-bullets">
+                        <li>Relevant courses: Algorithms, Databases, Python for Simulations, Computational Intelligence.</li>
+                        <li>Bachelor thesis: “Java Mobile Application for Personal Budget Management”.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Certifications &amp; Trainings</h2>
+                <div class="item">
+                    <div class="item-title">Java Developer Course – Telecom Academy</div>
+                    <div class="item-meta">Oct 2025 – Present</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Lenovo Front-end Workshop – Angular, HTML, CSS, JS</div>
+                    <div class="item-meta">Apr – May 2025</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Associate Data Scientist – DataCamp</div>
+                    <div class="item-meta">Jan 2025</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Front-end Developer Certificate – ILBAH Workshops</div>
+                    <div class="item-meta">May – Sep 2022</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Languages</h2>
+                <div class="item">
+                    <div class="item-sub">
+                        <strong>Romanian:</strong> Native<br />
+                        <strong>English:</strong> Advanced<br />
+                        <strong>French:</strong> Beginner
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Gheorghe Briana-Maria · Hosted on Azure Static Web (Homework 1)
+    </footer>
+</div>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
